@@ -18,11 +18,31 @@ License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Qml)
+BuildRequires: cmake(Qt5DBus)
+BuildRequires: cmake(Qt5Network)
+BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(Qt5UiPlugin)
+BuildRequires: cmake(Qt5UiTools)
+BuildRequires: cmake(Qt5Designer)
 BuildRequires: sasl-devel
+BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5AkonadiSearch)
 BuildRequires: cmake(KF5Mime)
+BuildRequires: cmake(KF5I18n)
+BuildRequires: cmake(KF5KCMUtils)
+BuildRequires: cmake(KF5Codecs)
+BuildRequires: cmake(KF5Completion)
+BuildRequires: cmake(KF5Wallet)
+BuildRequires: cmake(KF5IconThemes)
+BuildRequires: cmake(KF5ItemViews)
+BuildRequires: cmake(KF5Ldap)
+BuildRequires: cmake(KF5Contacts)
+BuildRequires: cmake(KF5AkonadiContact)
+BuildRequires: cmake(KF5KDELibs4Support)
+BuildRequires: cmake(KF5CalendarCore)
 
 %description
 KDE library for PIM handling
