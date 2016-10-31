@@ -46,7 +46,7 @@ BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5CalendarCore)
 
 %description
-KDE library for PIM handling
+KDE library for PIM handling.
 
 %package -n %{libname}
 Summary: KDE library for PIM handling
@@ -54,7 +54,7 @@ Group: System/Libraries
 Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
-KDE library for PIM handling
+KDE library for PIM handling.
 
 %package -n %{devname}
 Summary: Development files for %{name}
@@ -68,9 +68,9 @@ Development files (Headers etc.) for %{name}.
 %setup -q
 %apply_patches
 
-%build
 %cmake_kde5
-cd ../
+
+%build
 %ninja -C build
 
 %install
