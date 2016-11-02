@@ -29,6 +29,7 @@ BuildRequires: cmake(Qt5UiPlugin)
 BuildRequires: cmake(Qt5UiTools)
 BuildRequires: cmake(Qt5Designer)
 BuildRequires: sasl-devel
+BuildRequires: boost-devel
 BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5AkonadiSearch)
 BuildRequires: cmake(KF5Mime)
@@ -82,11 +83,11 @@ Development files (Headers etc.) for %{name}.
 %{_datadir}/dbus-1/interfaces/org.kde.mailtransport.service.xml
 %{_datadir}/kdepimwidgets
 %{_datadir}/kservices5/kcmldap.desktop
+%{_libdir}/qt5/plugins/designer/kdepimwidgets.so
+%{_libdir}/qt5/plugins/kcm_ldap.so
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
-%{_libdir}/qt5/plugins/designer/kdepimwidgets.so
-%{_libdir}/qt5/plugins/kcm_ldap.so
 
 %files -n %{devname}
 %{_includedir}/*
