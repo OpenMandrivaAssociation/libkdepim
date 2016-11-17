@@ -34,6 +34,7 @@ BuildRequires: sasl-devel
 BuildRequires: boost-devel
 BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5AkonadiSearch)
+BuildRequires: cmake(KF5AkonadiMime)
 BuildRequires: cmake(KF5Mime)
 BuildRequires: cmake(KF5I18n)
 BuildRequires: cmake(KF5KCMUtils)
