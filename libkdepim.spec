@@ -4,7 +4,7 @@
 
 Name: libkdepim
 Epoch: 3
-Version: 16.12.2
+Version: 17.04.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -79,8 +79,9 @@ Development files (Headers etc.) for %{name}.
 
 %install
 %ninja_install -C build
+%find_lang libkdepim
 
-%files
+%files -f libkdepim.lang
 %{_sysconfdir}/xdg/libkdepim.categories
 %{_sysconfdir}/xdg/libkdepim.renamecategories
 %{_datadir}/dbus-1/interfaces/org.kde.addressbook.service.xml
@@ -88,6 +89,7 @@ Development files (Headers etc.) for %{name}.
 %{_datadir}/kdepimwidgets
 %{_datadir}/kservices5/kcmldap.desktop
 %{_libdir}/qt5/plugins/designer/kdepimwidgets.so
+%{_libdir}/qt5/plugins/designer/kdepimakonadiwidgets.so
 %{_libdir}/qt5/plugins/kcm_ldap.so
 
 %files -n %{libname}
