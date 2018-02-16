@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   libkdepim-17.12.1.tar.xz: 9aab333c2d03c6f9af8b5a3ec327e8dcf49aed45
+sources:
+  libkdepim-17.12.2.tar.xz: acd0e68c26061bf844a9c3cd7c799c4ebfc8aeb1
