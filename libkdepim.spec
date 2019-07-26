@@ -4,7 +4,7 @@
 
 Name: libkdepim
 Epoch: 3
-Version:	19.04.3
+Version:	19.07.80
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -82,8 +82,8 @@ Development files (Headers etc.) for %{name}.
 %find_lang libkdepim
 
 %files -f libkdepim.lang
-%{_sysconfdir}/xdg/libkdepim.categories
-%{_sysconfdir}/xdg/libkdepim.renamecategories
+%{_datadir}/qlogging-categories5/libkdepim.categories
+%{_datadir}/qlogging-categories5/libkdepim.renamecategories
 %{_datadir}/dbus-1/interfaces/org.kde.addressbook.service.xml
 %{_datadir}/dbus-1/interfaces/org.kde.mailtransport.service.xml
 %{_datadir}/kdepimwidgets
