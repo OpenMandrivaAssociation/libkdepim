@@ -4,7 +4,7 @@
 
 Name: libkdepim
 Epoch: 3
-Version:	20.04.3
+Version:	20.07.80
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -84,11 +84,7 @@ Development files (Headers etc.) for %{name}.
 %{_datadir}/qlogging-categories5/libkdepim.renamecategories
 %{_datadir}/dbus-1/interfaces/org.kde.addressbook.service.xml
 %{_datadir}/dbus-1/interfaces/org.kde.mailtransport.service.xml
-%{_datadir}/kdepimwidgets
-%{_datadir}/kservices5/kcmldap.desktop
 %{_libdir}/qt5/plugins/designer/kdepimwidgets.so
-%{_libdir}/qt5/plugins/designer/kdepimakonadiwidgets.so
-%{_libdir}/qt5/plugins/kcm_ldap.so
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
