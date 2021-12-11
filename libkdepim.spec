@@ -4,7 +4,7 @@
 
 Name: libkdepim
 Epoch: 3
-Version:	21.08.3
+Version:	21.12.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -94,3 +94,4 @@ Development files (Headers etc.) for %{name}.
 %{_libdir}/*.so
 %{_libdir}/cmake/*
 %{_libdir}/qt5/mkspecs/modules/*.pri
+%doc %{_docdir}/qt5/*.{tags,qch}
