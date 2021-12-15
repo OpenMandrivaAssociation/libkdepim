@@ -48,6 +48,9 @@ BuildRequires: cmake(KF5Contacts)
 BuildRequires: cmake(KF5AkonadiContact)
 BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5CalendarCore)
+# For QCH format docs
+BuildRequires: doxygen
+BuildRequires: qt5-assistant
 
 %description
 KDE library for PIM handling.
