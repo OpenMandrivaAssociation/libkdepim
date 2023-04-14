@@ -4,14 +4,14 @@
 
 Name: libkdepim
 Epoch: 3
-Version:	22.12.3
+Version:	23.03.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	2
+Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for PIM handling
 URL: http://kde.org/
@@ -87,7 +87,7 @@ Development files (Headers etc.) for %{name}.
 %{_datadir}/qlogging-categories5/libkdepim.renamecategories
 %{_datadir}/dbus-1/interfaces/org.kde.addressbook.service.xml
 %{_datadir}/dbus-1/interfaces/org.kde.mailtransport.service.xml
-%{_libdir}/qt5/plugins/designer/kdepimwidgets.so
+%{_libdir}/qt5/plugins/designer/kdepim5widgets.so
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
