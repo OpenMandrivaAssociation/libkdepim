@@ -4,7 +4,7 @@
 
 Name: libkdepim
 Epoch: 3
-Version:	23.04.3
+Version:	23.08.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -32,10 +32,10 @@ BuildRequires: cmake(Qt5UiTools)
 BuildRequires: cmake(Qt5Designer)
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
-BuildRequires: cmake(KF5Akonadi)
-BuildRequires: cmake(KF5AkonadiSearch)
-BuildRequires: cmake(KF5AkonadiMime)
-BuildRequires: cmake(KF5Mime)
+BuildRequires: cmake(KPim5Akonadi)
+BuildRequires: cmake(KPim5AkonadiSearch)
+BuildRequires: cmake(KPim5AkonadiMime)
+BuildRequires: cmake(KPim5Mime)
 BuildRequires: cmake(KF5I18n)
 BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: cmake(KF5Codecs)
@@ -43,9 +43,9 @@ BuildRequires: cmake(KF5Completion)
 BuildRequires: cmake(KF5Wallet)
 BuildRequires: cmake(KF5IconThemes)
 BuildRequires: cmake(KF5ItemViews)
-BuildRequires: cmake(KF5Ldap)
+BuildRequires: cmake(KPim5Ldap)
 BuildRequires: cmake(KF5Contacts)
-BuildRequires: cmake(KF5AkonadiContact)
+BuildRequires: cmake(KPim5AkonadiContact)
 BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5CalendarCore)
 # For QCH format docs
