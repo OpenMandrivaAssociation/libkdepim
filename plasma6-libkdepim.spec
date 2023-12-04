@@ -1,0 +1,96 @@
+%define major 6
+%define libname %mklibname KPim6Libkdepim
+%define devname %mklibname KPim6Libkdepim -d
+
+Name: plasma6-libkdepim
+Version:	24.01.80
+%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %{is_beta}
+%define ftpdir unstable
+%else
+%define ftpdir stable
+%endif
+Release:	1
+Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/libkdepim-%{version}.tar.xz
+Summary: KDE library for PIM handling
+URL: http://kde.org/
+License: GPL
+Group: System/Libraries
+BuildRequires: cmake(ECM)
+BuildRequires: cmake(Qt6)
+BuildRequires: cmake(Qt6Core)
+BuildRequires: cmake(Qt6Gui)
+BuildRequires: cmake(Qt6Test)
+BuildRequires: cmake(Qt6Qml)
+BuildRequires: cmake(Qt6DBus)
+BuildRequires: cmake(Qt6Network)
+BuildRequires: cmake(Qt6Widgets)
+BuildRequires: cmake(Qt6UiPlugin)
+BuildRequires: cmake(Qt6UiTools)
+BuildRequires: cmake(Qt6Designer)
+BuildRequires: sasl-devel
+BuildRequires: boost-devel
+BuildRequires: cmake(KPim6Akonadi)
+BuildRequires: cmake(KPim6AkonadiSearch)
+BuildRequires: cmake(KPim6AkonadiMime)
+BuildRequires: cmake(KPim6Mime)
+BuildRequires: cmake(KF6I18n)
+BuildRequires: cmake(KF6KCMUtils)
+BuildRequires: cmake(KF6Codecs)
+BuildRequires: cmake(KF6Completion)
+BuildRequires: cmake(KF6Wallet)
+BuildRequires: cmake(KF6IconThemes)
+BuildRequires: cmake(KF6ItemViews)
+BuildRequires: cmake(KPim6LdapCore)
+BuildRequires: cmake(KF6Contacts)
+BuildRequires: cmake(KPim6AkonadiContactCore)
+BuildRequires: cmake(KF6CalendarCore)
+# For QCH format docs
+BuildRequires: doxygen
+BuildRequires: qt6-qttools-assistant
+
+%description
+KDE library for PIM handling.
+
+%package -n %{libname}
+Summary: KDE library for PIM handling
+Group: System/Libraries
+Requires: %{name} = %{EVRD}
+
+%description -n %{libname}
+KDE library for PIM handling.
+
+%package -n %{devname}
+Summary: Development files for %{name}
+Group: Development/C
+Requires: %{libname} = %{EVRD}
+
+%description -n %{devname}
+Development files (Headers etc.) for %{name}.
+
+%prep
+%autosetup -p1 -n libkdepim-%{version}
+%cmake \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
+	-G Ninja
+
+%build
+%ninja -C build
+
+%install
+%ninja_install -C build
+%find_lang libkdepim
+
+%files -f libkdepim.lang
+%{_datadir}/qlogging-categories6/libkdepim.categories
+%{_datadir}/qlogging-categories6/libkdepim.renamecategories
+%{_datadir}/dbus-1/interfaces/org.kde.addressbook.service.xml
+%{_datadir}/dbus-1/interfaces/org.kde.mailtransport.service.xml
+%{_libdir}/qt6/plugins/designer/kdepim6widgets.so
+
+%files -n %{libname}
+%{_libdir}/*.so*
+
+%files -n %{devname}
+%{_includedir}/*
+%{_libdir}/cmake/*
