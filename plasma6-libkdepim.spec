@@ -3,7 +3,7 @@
 %define devname %mklibname KPim6Libkdepim -d
 
 Name: plasma6-libkdepim
-Version:	24.01.85
+Version:	24.01.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -79,9 +79,9 @@ Development files (Headers etc.) for %{name}.
 
 %install
 %ninja_install -C build
-%find_lang libkdepim
+%find_lang libkdepim6
 
-%files -f libkdepim.lang
+%files -f libkdepim6.lang
 %{_datadir}/qlogging-categories6/libkdepim.categories
 %{_datadir}/qlogging-categories6/libkdepim.renamecategories
 %{_datadir}/dbus-1/interfaces/org.kde.addressbook.service.xml
