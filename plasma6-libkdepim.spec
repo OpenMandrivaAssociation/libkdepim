@@ -15,7 +15,7 @@ Version:	24.01.96
 %endif
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
-Source0:	https://invent.kde.org/pim/libkdepim/-/archive/%{gitbranch}/libkdepim-%{gitbranchd}.tar.bz2#/libkdepim-20240217.tar.bz2
+Source0:	https://invent.kde.org/pim/libkdepim/-/archive/%{gitbranch}/libkdepim-%{gitbranchd}.tar.bz2#/libkdepim-%{git}.tar.bz2
 %else
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/libkdepim-%{version}.tar.xz
 %endif
