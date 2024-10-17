@@ -20,7 +20,7 @@ Source0:	https://invent.kde.org/pim/libkdepim/-/archive/%{gitbranch}/libkdepim-%
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/libkdepim-%{version}.tar.xz
 %endif
 Summary: KDE library for PIM handling
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
